@@ -18,7 +18,6 @@ const Home: NextPage = ({ posts }: any) => {
         <Main />
         <MainPost data={posts} />
         <Crafts />
-        <MainPost data={posts} />
       </ScrollObserver>
       <Footer />
     </>

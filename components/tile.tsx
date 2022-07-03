@@ -22,9 +22,9 @@ export const TileWrapper: React.FC<WrapperProps> = ({
   numOfPages,
 }) => {
   let currentPage = 0;
-  const {scrollY} = useContext(scrollContext);
+  const { scrollY } = useContext(scrollContext);
   const refContainer = useRef<HTMLDivElement>(null);
-  
+
   const { current: elContainer } = refContainer;
   if (elContainer) {
     const { clientHeight, offsetTop } = elContainer;
@@ -40,9 +40,13 @@ export const TileWrapper: React.FC<WrapperProps> = ({
   }
   return (
     <TileContext.Provider value={{ numOfPages, currentPage }}>
-      <div ref={refContainer} className="relative bg-black text-white" style={{
-        height: numOfPages*100+'vh'
-      }}>
+      <div
+        ref={refContainer}
+        className="relative bg-black text-white"
+        style={{
+          height: numOfPages * 100 + "vh",
+        }}
+      >
         {children}
       </div>
     </TileContext.Provider>
@@ -55,7 +59,7 @@ export const TileBackground: React.FC<any> = ({ children }) => {
 
 export const TileContent: React.FC<any> = ({ children }) => {
   return (
-    <div className="sticky top-[10vh] h-screen md:h-[90vh] overflow-hidden">{children}</div>
+    <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
   );
 };
 
