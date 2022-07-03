@@ -4,7 +4,7 @@ const Footer = () => {
   let year = new Date().getFullYear();
 
   return (
-    <div className="bg-black text-white h-fit flex flex-col py-7 gap-y-10">
+    <footer className="bg-black mt-auto text-white h-fit flex flex-col py-7 gap-y-10">
       <div className="md:w-6/12 w-full mx-auto border-white">
         <div className="flex flex-row justify-between px-6 md:px-0 ">
           <div className="justify-center my-auto">
@@ -31,7 +31,7 @@ const Footer = () => {
       <div className="mx-auto">
         <p>&copy; {year} made with ♥ by Agung Firmansyah</p>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

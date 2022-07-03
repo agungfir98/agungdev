@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState, useCallback } from "react";
+import React, { useRef, useContext, useState, useCallback, useEffect } from "react";
 import { scrollContext } from "../utils/scrollObserver";
 
 const Main = () => {
@@ -17,9 +17,9 @@ const Main = () => {
       <main
         ref={refContainer}
         className="md:w-6/12 mx-auto px-6 md:px-0 py-24 sticky top-0 -z-10"
-        // style={{
-        //   transform: `translateY(-${progress * 20}vh)`
-        // }}
+        style={{
+          transform: `translateY(-${progress * 30}vh)`
+        }}
       >
         <h1 className="text-4xl font-bold leading-snug">
           Hi! 👋 <br /> I&apos;m Agung Firmansyah
@@ -30,8 +30,6 @@ const Main = () => {
           sometimes. I enjoy doing code, solving problem and designing.
           Currently learning everything.
         </p>
-        <p>{progress}</p>
-        <p>{scrollY}</p>
       </main>
     </>
   );
