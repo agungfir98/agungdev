@@ -10,7 +10,7 @@ module.exports = {
         imperial: "#E63946",
       },
       fontFamily: {
-        bebas: "Bebas Neue",
+        bebas: ["Bebas Neue", "cursive"],
         inter: ["Inter, sans-serif"],
       },
     },
