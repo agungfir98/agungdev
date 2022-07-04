@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getFormatedDate } from "../utils";
+import { LinkBtn } from "./downloadBtn";
 
 const MainPost = ({ data }: any) => {
   return (
@@ -30,14 +31,9 @@ const MainPost = ({ data }: any) => {
               ))}
             </ul>
           </section>
-          <Link href={"/posts"}>
-            <p
-              style={{ cursor: "pointer" }}
-              className=" border border-white w-fit p-3 rounded-lg text-white mx-auto"
-            >
-              See more...
-            </p>
-          </Link>
+          <LinkBtn accentColor="white" href={"/posts"}>
+            See more...
+          </LinkBtn>
         </div>
       </div>
     </>
