@@ -8,7 +8,7 @@ const Navbar = () => {
             agung-dev
           </Link>
         </h1>
-        <button className="border h-fit py-2 bg-white drop-shadow-lg border-black border-solid px-3 rounded-md">
+        <button className="border h-fit py-2 bg-white drop-shadow-lg border-black border-solid px-3 rounded-lg">
           <p className="font-inter font-semibold">Menus</p>
         </button>
       </div>

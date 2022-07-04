@@ -1,14 +1,10 @@
 import { GetStaticProps } from "next";
 import React from "react";
-import fs from "fs";
-import fsPromise from "fs/promises";
-import path from "path";
-import matter from "gray-matter";
 import Link from "next/link";
 
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { getReadTime, toSlug, toTitleCase, getFormatedDate } from "../utils";
+import { getFormatedDate } from "../utils";
 import { getFileData, getFrontPostData, getMetaData } from "../lib/mdx";
 
 interface PostObj {
@@ -26,11 +22,11 @@ interface PostObj {
 
 const Posts: React.FC<PostObj> = ({ posts }) => {
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col gap-y-16">
       <Navbar />
       <div className="h-fit px-6 md:px-0">
         <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
-          <h1 className="text-2xl font-semibold">Posts</h1>
+          <h1 className="text-3xl font-bold">Posts</h1>
 
           <section className=" flex flex-col justify-between gap-y-8">
             <ul className="flex flex-col justify-between gap-y-2">
