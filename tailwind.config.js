@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        imperial: '#E63946'
+        imperial: "#E63946",
       },
       fontFamily: {
-        bebas: "Bebas Neue, cursive",
+        bebas: "Bebas Neue",
         inter: ["Inter, sans-serif"],
       },
     },
