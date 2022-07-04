@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import Link from "next/link";
-
+import Head from "next/head";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { getFormatedDate } from "../utils";
@@ -22,37 +22,42 @@ interface PostObj {
 
 const Posts: React.FC<PostObj> = ({ posts }) => {
   return (
-    <div className="h-screen flex flex-col gap-y-16">
-      <Navbar />
-      <div className="h-fit px-6 md:px-0">
-        <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
-          <h1 className="text-3xl font-bold">Posts</h1>
+    <>
+      <Head>
+        <title>Posts</title>
+      </Head>
+      <div className="h-screen flex flex-col gap-y-16">
+        <Navbar />
+        <div className="h-fit px-6 md:px-0">
+          <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
+            <h1 className="text-3xl font-bold">Posts</h1>
 
-          <section className=" flex flex-col justify-between gap-y-8">
-            <ul className="flex flex-col justify-between gap-y-2">
-              {posts.map((v, i) => (
-                <li key={i}>
-                  <Link href={v.slug}>
-                    <a rel="noreferrer">
-                      <h1 className="text-imperial text-2xl font-bold">
-                        {v.title}
-                      </h1>
-                      <p className="">
-                        {" "}
-                        {getFormatedDate(v.createdAt)} &#183; {v.readTime} min
-                        read
-                      </p>
-                      <p className="leading-9">{v.truncate}...</p>
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+            <section className=" flex flex-col justify-between gap-y-8">
+              <ul className="flex flex-col justify-between gap-y-2">
+                {posts.map((v, i) => (
+                  <li key={i}>
+                    <Link href={v.slug}>
+                      <a rel="noreferrer">
+                        <h1 className="text-imperial text-2xl font-bold">
+                          {v.title}
+                        </h1>
+                        <p className="">
+                          {" "}
+                          {getFormatedDate(v.createdAt)} &#183; {v.readTime} min
+                          read
+                        </p>
+                        <p className="leading-9">{v.truncate}...</p>
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 export default Posts;

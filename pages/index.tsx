@@ -13,6 +13,9 @@ import ScrollObserver from "../utils/scrollObserver";
 const Home: NextPage = ({ posts }: any) => {
   return (
     <>
+      <Head>
+        <title>Agung Firmansyah</title>
+      </Head>
       <Navbar />
       <ScrollObserver>
         <Main />
