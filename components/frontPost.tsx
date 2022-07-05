@@ -18,11 +18,11 @@ const MainPost = ({ data }: any) => {
                         <h1 className="text-imperial text-2xl font-bold">
                           {v.title}
                         </h1>
-                        <p className="font-extralight">
+                        <p className="font-extralight py-2">
                           {getFormatedDate(v.createdAt)} &#183; {v.readTime} min
                           read
                         </p>
-                        <p className="leading-9 text-base">{v.truncate} ...</p>
+                        <p className="leading-7 text-base">{v.truncate} ...</p>
                       </article>
                     </a>
                   </Link>

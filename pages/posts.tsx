@@ -45,12 +45,12 @@ const Posts: React.FC<PostObj> = ({ posts }) => {
                         <h1 className="text-imperial text-2xl font-bold">
                           {v.title}
                         </h1>
-                        <p className="">
+                        <p className="py-2">
                           {" "}
                           {getFormatedDate(v.createdAt)} &#183; {v.readTime} min
                           read
                         </p>
-                        <p className="leading-9">{v.truncate}...</p>
+                        <p className="leading-7">{v.truncate}...</p>
                       </a>
                     </Link>
                   </li>
