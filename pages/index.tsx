@@ -1,22 +1,25 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Crafts from "../components/crafts";
 import Footer from "../components/footer";
 import MainPost from "../components/frontPost";
-
 import Main from "../components/main";
 import Navbar from "../components/navbar";
-import { getFileData, getFrontPostData, getMetaData } from "../lib/mdx";
+import { getFileData, getFrontPostData } from "../lib/mdx";
 
 import ScrollObserver from "../utils/scrollObserver";
 
 const Home: NextPage = ({ posts }: any) => {
+  const router = useRouter();
+  const route = router.pathname;
+  console.log(route);
   return (
     <>
       <Head>
         <title>Agung Firmansyah</title>
       </Head>
-      <Navbar />
+      <Navbar activeRoute={route} />
       <ScrollObserver>
         <Main />
         <MainPost data={posts} />
@@ -30,8 +33,8 @@ const Home: NextPage = ({ posts }: any) => {
 export default Home;
 export const getStaticProps = async () => {
   const fileData = await getFileData("data/blog");
-  const metaData = await getMetaData("data/blog");
-  const posts = await getFrontPostData(fileData, metaData);
+  // const metaData = await getMetaData("data/blog");
+  const posts = await getFrontPostData(fileData);
 
   return {
     props: {

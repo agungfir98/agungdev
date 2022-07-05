@@ -33,7 +33,7 @@ const MainPost = ({ data }: any) => {
           <Link href={"/posts"}>
             <p
               style={{ cursor: "pointer" }}
-              className="border border-white w-fit p-3 rounded-lg text-white mx-auto font-bold"
+              className="border-2 border-white w-fit p-3 rounded-lg text-white mx-auto font-bold"
             >
               See more...
             </p>

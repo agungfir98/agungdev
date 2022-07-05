@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
+
 import { CodeCraftCard, GraphicDesignCard } from "../components/cards";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
@@ -25,13 +27,15 @@ const projectData = [
   },
 ];
 const Posts = () => {
+  const router = useRouter();
+  const route = router.pathname;
   return (
     <>
       <Head>
         <title>Crafts</title>
       </Head>
       <div className="min-h-screen flex flex-col gap-y-16">
-        <Navbar />
+        <Navbar activeRoute={route} />
         <div className="h-fit px-6 md:px-0">
           <div className="md:w-6/12 mx-auto flex flex-col gap-y-10">
             <h1 className="text-3xl font-bold">Crafts</h1>
@@ -40,7 +44,7 @@ const Posts = () => {
               <h2 className="text-2xl font-bold underline-offset-4 underline">
                 Code Project
               </h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {projectData.map((data, i) => (
                   <CodeCraftCard key={i} {...data} />
                 ))}
@@ -50,7 +54,7 @@ const Posts = () => {
               <h1 className="text-2xl font-bold underline-offset-4 underline">
                 Graphic Design
               </h1>
-              <div className="grid grid-cols-2 gap-4 font-semibold tracking-wide">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-semibold tracking-wide">
                 <div className="relative w-full h-full group">
                   <GraphicDesignCard
                     src={"/asset/designGraphic/cactus.png"}

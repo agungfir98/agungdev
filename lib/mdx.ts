@@ -12,12 +12,14 @@ export const getFileData = async (folPath: any) => {
       const { data: formatter, content } = matter(markdownWithMeta);
 
       const titleTitleCase = toTitleCase(formatter.title);
+      const createdAt = formatter.createdAt;
       const slug = toSlug(formatter.title);
       const truncate = content.substring(0, 200);
       const readTime = getReadTime(content);
 
       const data = {
         title: titleTitleCase,
+        createdAt,
         slug,
         truncate,
         readTime,
@@ -27,15 +29,14 @@ export const getFileData = async (folPath: any) => {
     })
   );
 };
-export const getMetaData = async (folPath: any) => {
-  return await fsPromise.stat(path.join(folPath)).then((res) => {
-    return { createdAt: res.birthtimeMs, updatedAt: res.mtimeMs };
-  });
-};
-export const getFrontPostData = (fileData: any, metaData: any) => {
+// export const getMetaData = async (folPath: any) => {
+//   return await fsPromise.stat(path.join(folPath)).then((res) => {
+//     return { createdAt: res.birthtimeMs, updatedAt: res.mtimeMs };
+//   });
+// };
+export const getFrontPostData = (fileData: any) => {
   return fileData.map((v: any) => {
-    const { readTime, slug, title, truncate } = v;
-    const { createdAt, updatedAt } = metaData;
+    const { createdAt, readTime, slug, title, truncate } = v;
 
     return {
       readTime,
@@ -43,7 +44,6 @@ export const getFrontPostData = (fileData: any, metaData: any) => {
       title,
       truncate,
       createdAt,
-      updatedAt,
     };
   });
 };

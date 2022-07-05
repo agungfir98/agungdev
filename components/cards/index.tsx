@@ -9,7 +9,7 @@ export const CodeCraftCard: React.FC<{
 }> = ({ link, title, shortDesc }) => {
   return (
     <Link href={link}>
-      <a className="border border-black rounded-lg" rel={`noreferrer`}>
+      <a target="_blank" className="border-2 border-black rounded-lg" rel={`noreferrer`}>
         <div className="px-3 pt-4 py-3 flex flex-col gap-y-2" id="card">
           <h3 className="font-bold text-2xl">{title}</h3>
           <p>{shortDesc}</p>

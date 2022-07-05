@@ -1,18 +1,22 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Head from "next/head";
 
 const Posts = () => {
+  const router = useRouter();
+  const route = router.pathname;
+  console.log(typeof(route))
   return (
     <>
       <Head>
         <title>About</title>
       </Head>
       <div className="min-h-screen flex flex-col gap-y-16">
-        <Navbar />
+        <Navbar activeRoute={route}/>
         <div className="h-fit px-6 md:px-0">
           <div className="md:w-6/12 mx-auto flex flex-col gap-y-10">
             <h1 className="text-3xl font-semibold">About</h1>
@@ -38,7 +42,7 @@ const Posts = () => {
               }
             >
               <a target="_blank">
-                <p className="border border-black w-fit p-3 rounded-lg text-black mx-auto font-bold">
+                <p className="border-2 border-black w-fit p-3 rounded-lg text-black mx-auto font-bold">
                   Download My Resume
                 </p>
               </a>

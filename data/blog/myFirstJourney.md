@@ -2,6 +2,7 @@
 title: "my life into software development journey"
 draft: false
 image: "/asset/blog/img1.png"
+createdAt: 1656585503000
 ---
 
 This will be my very first serious writing ever, It’ll be terrible I believe, but at least I tried my best pouring my thoughts into it, and will be updated over time.

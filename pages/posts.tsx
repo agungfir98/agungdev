@@ -2,10 +2,12 @@ import { GetStaticProps } from "next";
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
+
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { getFormatedDate } from "../utils";
-import { getFileData, getFrontPostData, getMetaData } from "../lib/mdx";
+import { getFileData, getFrontPostData } from "../lib/mdx";
 
 interface PostObj {
   posts: [
@@ -21,13 +23,15 @@ interface PostObj {
 }
 
 const Posts: React.FC<PostObj> = ({ posts }) => {
+  const router = useRouter();
+  const route = router.pathname;
   return (
     <>
       <Head>
         <title>Posts</title>
       </Head>
       <div className="h-screen flex flex-col gap-y-16">
-        <Navbar />
+        <Navbar activeRoute={route} />
         <div className="h-fit px-6 md:px-0">
           <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
             <h1 className="text-3xl font-bold">Posts</h1>
@@ -66,8 +70,7 @@ export default Posts;
 
 export const getStaticProps: GetStaticProps = async () => {
   const fileData = await getFileData("data/blog");
-  const metaData = await getMetaData("data/blog");
-  const posts = getFrontPostData(fileData, metaData);
+  const posts = getFrontPostData(fileData);
 
   return {
     props: {
