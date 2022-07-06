@@ -1,5 +1,5 @@
 ---
-title: "my life into software development journey"
+title: "my journey into software development"
 draft: false
 image: "/asset/blog/img1.png"
 createdAt: 1656585503000

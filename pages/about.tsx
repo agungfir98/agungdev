@@ -6,17 +6,16 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Head from "next/head";
 
-const Posts = () => {
+const Posts: React.FC = () => {
   const router = useRouter();
   const route = router.pathname;
-  console.log(typeof(route))
   return (
     <>
       <Head>
         <title>About</title>
       </Head>
       <div className="min-h-screen flex flex-col gap-y-16">
-        <Navbar activeRoute={route}/>
+        <Navbar activeRoute={route} />
         <div className="h-fit px-6 md:px-0">
           <div className="md:w-6/12 mx-auto flex flex-col gap-y-10">
             <h1 className="text-3xl font-semibold">About</h1>

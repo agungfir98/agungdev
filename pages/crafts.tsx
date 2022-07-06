@@ -26,7 +26,7 @@ const projectData = [
     link: "https://github.com/agungfir98/TokopediaPriceChecker",
   },
 ];
-const Posts = () => {
+const Posts: React.FC = () => {
   const router = useRouter();
   const route = router.pathname;
   return (

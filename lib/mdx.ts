@@ -47,3 +47,7 @@ export const getFrontPostData = (fileData: any) => {
     };
   });
 };
+
+export const getContentData = async (folPath: string, opt:string) => {
+  return await fsPromise.readdir(path.join(folPath, opt))
+};

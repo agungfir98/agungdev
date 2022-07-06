@@ -13,7 +13,6 @@ import ScrollObserver from "../utils/scrollObserver";
 const Home: NextPage = ({ posts }: any) => {
   const router = useRouter();
   const route = router.pathname;
-  console.log(route);
   return (
     <>
       <Head>
