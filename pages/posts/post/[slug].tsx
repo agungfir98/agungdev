@@ -43,7 +43,7 @@ export const Post: React.FC<{
               </p>
             </div>
             <article
-              className="text-2xl leading-9"
+              className="text-xl leading-9"
               dangerouslySetInnerHTML={{
                 __html: marked(content),
               }}

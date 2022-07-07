@@ -8,7 +8,6 @@ export const getFileData = async (folPath: any) => {
   return await fsPromise.readdir(path.join(folPath)).then((res) =>
     res.map((v) => {
       const markdownWithMeta = fs.readFileSync(path.join(folPath, v), "utf-8");
-
       const { data: formatter, content } = matter(markdownWithMeta);
 
       const titleTitleCase = toTitleCase(formatter.title);
@@ -16,6 +15,7 @@ export const getFileData = async (folPath: any) => {
       const slug = toSlug(formatter.title);
       const truncate = content.substring(0, 200);
       const readTime = getReadTime(content);
+      const draft = formatter.draft;
 
       const data = {
         title: titleTitleCase,
@@ -23,6 +23,7 @@ export const getFileData = async (folPath: any) => {
         slug,
         truncate,
         readTime,
+        draft,
       };
 
       return data;
@@ -35,7 +36,10 @@ export const getFileData = async (folPath: any) => {
 //   });
 // };
 export const getFrontPostData = (fileData: any) => {
-  return fileData.map((v: any) => {
+  const filteredData = fileData.filter((data: any) => {
+    if (!data.draft) return data;
+  });
+  return filteredData.map((v: any) => {
     const { createdAt, readTime, slug, title, truncate } = v;
 
     return {
@@ -48,6 +52,6 @@ export const getFrontPostData = (fileData: any) => {
   });
 };
 
-export const getContentData = async (folPath: string, opt:string) => {
-  return await fsPromise.readdir(path.join(folPath, opt))
+export const getContentData = async (folPath: string, opt: string) => {
+  return await fsPromise.readdir(path.join(folPath, opt));
 };

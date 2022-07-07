@@ -5,16 +5,16 @@ const MainPost = ({ data }: any) => {
   return (
     <>
       <div className="h-fit  bg-black py-10 px-6 md:px-0">
-        <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
+        <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-12">
           <h1 className="text-white text-2xl font-semibold">Latest Posts</h1>
           <section className=" flex flex-col justify-between text-white gap-y-8">
-            <ul>
+            <ul className=" flex flex-col justify-between gap-y-7">
               {!data.length && "No Post Yet"}
               {data.map((v: any, i: any) => (
                 <li key={i}>
                   <Link href={v.slug}>
                     <a rel="noreferrer">
-                      <article className="flex flex-col justify-between gap-y-2">
+                      <article className="flex flex-col justify-between">
                         <h1 className="text-imperial text-2xl font-bold">
                           {v.title}
                         </h1>

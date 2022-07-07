@@ -33,7 +33,10 @@ export default Home;
 export const getStaticProps = async () => {
   const fileData = await getFileData("data/blog");
   // const metaData = await getMetaData("data/blog");
-  const posts = await getFrontPostData(fileData);
+  const posts = getFrontPostData(fileData).sort(
+    (a: { createdAt: number }, b: { createdAt: number }) =>
+      b.createdAt - a.createdAt
+  );
 
   return {
     props: {
