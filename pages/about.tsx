@@ -27,7 +27,7 @@ const Posts: React.FC = () => {
               serious software development not long ago, I already very familiar
               with computer, networking since I was a kid. for more story about
               that you can read it{" "}
-              <Link href="/posts/post/my-life-into-software-development-journey">
+              <Link href="/posts/post/my-journey-into-software-development">
                 <a className="text-imperial font-semibold underline underline-offset-1">
                   here
                 </a>
