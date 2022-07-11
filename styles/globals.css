@@ -23,3 +23,21 @@ a {
 .hljs {
   border-radius: 0.5rem;
 }
+#post > h1 {
+  font-size: xx-large;
+  font-weight: 700;
+}
+#post > h2 {
+  font-size: large;
+  font-weight: 700;
+}
+
+#post > ol {
+  padding-left: 2em;
+  list-style-type: decimal;
+}
+
+#post > ul {
+  padding-left: 2em;
+  list-style: disc;
+}

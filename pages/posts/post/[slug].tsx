@@ -63,7 +63,8 @@ export const Post: React.FC<{
               </p>
             </div>
             <article
-              className="text-xl leading-9 flex flex-col gap-y-2"
+              id="post"
+              className="text-xl leading-9 flex flex-col gap-y-4"
               dangerouslySetInnerHTML={{
                 __html: marked.parse(content),
               }}
