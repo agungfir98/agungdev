@@ -20,12 +20,6 @@ a {
 * {
   box-sizing: border-box;
 }
-/* 
-pre {
-  padding: 16px;
-  background-color: #1f2937;
-  border-radius: .5em;
+.hljs {
+  border-radius: 0.5rem;
 }
-code {
-  color: white;
-} */

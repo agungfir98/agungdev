@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import path from "path";
 import fsPromise from "fs/promises";
 import matter from "gray-matter";
 import { marked } from "marked";
+import hljs from "highlight.js";
+import "highlight.js/styles/base16/monokai.css";
 
 import Navbar from "../../../components/navbar";
 import Footer from "../../../components/footer";
 import { getFileData } from "../../../lib/mdx";
 import { getFormatedDate, getReadTime, toTitleCase } from "../../../utils";
-import Head from "next/head";
 
 export const Post: React.FC<{
   frontMatter: { title: string; createdAt: Date };
@@ -20,6 +22,24 @@ export const Post: React.FC<{
   // const router = useRouter();
   // const route = router.pathname.match(/\/[a-z]*/)[0];
   const route = "/posts";
+
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function (code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : "plaintext";
+      return hljs.highlight(code, { language }).value;
+    },
+    langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false,
+  });
+
+  useEffect(() => hljs.initHighlightingOnLoad(), []);
 
   return (
     <>
@@ -43,9 +63,9 @@ export const Post: React.FC<{
               </p>
             </div>
             <article
-              className="text-xl leading-9"
+              className="text-xl leading-9 flex flex-col gap-y-2"
               dangerouslySetInnerHTML={{
-                __html: marked(content),
+                __html: marked.parse(content),
               }}
             ></article>
           </div>

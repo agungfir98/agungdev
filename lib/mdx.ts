@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import { toTitleCase, toSlug, getReadTime } from "../utils";
 
 export const getFileData = async (folPath: any) => {
-  return await fsPromise.readdir(path.join(folPath)).then((res) =>
+  return await fsPromise.readdir(path.join(folPath), "utf-8").then((res) =>
     res.map((v) => {
       const markdownWithMeta = fs.readFileSync(path.join(folPath, v), "utf-8");
       const { data: formatter, content } = matter(markdownWithMeta);
@@ -53,5 +53,5 @@ export const getFrontPostData = (fileData: any) => {
 };
 
 export const getContentData = async (folPath: string, opt: string) => {
-  return await fsPromise.readdir(path.join(folPath, opt));
+  return await fsPromise.readdir(path.join(folPath, opt), "utf-8");
 };
