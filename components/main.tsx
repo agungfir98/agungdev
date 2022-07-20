@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useEffect,
 } from "react";
+import Link from "next/link";
 import { scrollContext } from "../utils/scrollObserver";
 
 const Main = () => {
@@ -22,7 +23,7 @@ const Main = () => {
     <>
       <main
         ref={refContainer}
-        className="md:w-6/12 mx-auto px-6 md:px-0 py-24 sticky top-0 -z-10"
+        className="md:w-6/12 mx-auto px-6 md:px-0 py-24"
         style={{
           transform: `translateY(-${progress * 30}vh)`,
         }}
@@ -34,7 +35,12 @@ const Main = () => {
           Indonesian based Electrical Engineer, burning passion in Software
           Development, ReactJS Developer, UI/UX enthusiast, and Graphic Designer
           sometimes. I enjoy doing code, solving problem and designing.
-          Currently learning everything.
+          Currently learning everything,{"  "}
+          <Link href="/about">
+            <a className="text-imperial font-semibold underline underline-offset-1">
+              Read About Me &rsaquo;&rsaquo;.
+            </a>
+          </Link>
         </p>
       </main>
     </>
