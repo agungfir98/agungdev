@@ -7,13 +7,13 @@ image: ""
 
 # Intro
 
-This post will be about my learning progress about using google apis. specificaly using google spreadsheet to access cells data so I'm able to read and write data to it.
+This post will be about my learning progress about using google APIs. specifically using google spreadsheet to access cell data so I'm able to read and write data to it.
 
-Recently my friend been asking me about his project plan. he'd like to make an online wedding invitation bussiness. Since Covid happen this trend sky rocketing. Almost everyone use this kind of service. maybe because it's relatively cheaper and easy to distribute since almost everyone use smartphone nowadays.
+Recently my friend has been asking me about his project plan. he'd like to make an online wedding invitation business. Since Covid happen this trend skyrocketing. Almost everyone uses this kind of service. maybe because it's relatively cheaper and easy to distribute since almost everyone uses a smartphone nowadays.
 
-Long story short, during the discussion I realized that we can use google sheet as a simple database to store RSVP data, and I think it's very confinient as well, because then the about to be married couple can access it directly in the google sheet.
+Long story short, during the discussion I realized that we can use Google Sheets as a simple database to store RSVP data, and I think it's very convenient as well because then the about-to-be married couple can access it directly in the google sheet.
 
-In this project I will only do on how to read and add data to the sheet.
+In this project, I will only do how to read and add data to the sheet.
 
 I will be using NodeJS for this project
 
@@ -42,10 +42,10 @@ I will be using NodeJS for this project
 
 # Create Project
 
-First let's initialize the project using npm init
+First, let's initialize the project using npm init
 
 ```js
-npm init -y //or wihtout "-y" if you'd like to configire the package.json
+npm init -y //or without "-y" if you'd like to configure the package.json
 ```
 
 ## Install Dependency
@@ -87,8 +87,8 @@ app.listen(3000, () => console.log("server running at PORT: 3000"));
 
 ## Reading table data
 
-When accessing google sheet data, first we need to be authenticated before able to get the data. Then we create an instance of the google sheet, finally we can get the data by calling the function `get()`
-provided by the google which require an object parameter containing spreadsheetId, and range. The documentation can be seen [here](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get)
+When accessing google sheet data, first we need to be authenticated before being able to get the data. Then we create an instance of the google sheet, finally, we can get the data by calling the function `get()`
+provided by google which requires an object parameter containing spreadsheetId, and range. The documentation can be seen [here](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get)
 
 ```js
 app.get("/", async (req, res) => {
@@ -116,7 +116,7 @@ in a get method you'd need a spreadsheetId which we can see in the google sheet 
 
 ## Adding data to the table
 
-In order to add data to the table we can use method called `append()` which take object with keys: spreadsheetId, range, valueInputOption, and resource which contain another object filled with array of array as a value. The documentation can be read [here](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append)
+In order to add data to the table, we can use a method called `append()` which takes an object with keys: spreadsheetId, range, valueInputOption, and resource which contains another object filled with an array of an array as a value. The documentation can be read [here](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append)
 
 ```js
 app.post("/", async (req, res) => {
@@ -204,16 +204,16 @@ app.listen(3000, () => console.log("app listening on port 3000"));
 
 ## pros and cons
 
-Google sheet never designed to be a database so there would be disadvantage e.g.
+Google sheet was never designed to be a database so there would be disadvantaged e.g.
 
-- There wont be any complex query like join etc.
+- There won't be any complex queries like join etc.
 - only scale to 5 Million cells.
-- there is api quota that limit only 500 request per 100 seconds.
+- there is an API quota that limits only 500 requests per 100 seconds.
 
 And The Pros would be:
 
 - good for prototyping.
-- good for really simple project.
+- good for really simple projects.
 - if you are broke. 😁
 
 I think that's it for my own learning report.
