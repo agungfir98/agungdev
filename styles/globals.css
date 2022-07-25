@@ -12,10 +12,10 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 }
 
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -40,4 +40,7 @@ a {
 #post > ul {
   padding-left: 2em;
   list-style: disc;
+}
+#post a {
+  @apply text-imperial;
 }
