@@ -49,7 +49,7 @@ export const Post: React.FC<{
         <meta name="author" content="Agung Firmansyah" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="h-screen flex flex-col gap-y-16">
+      <div className="min-h-screen flex flex-col gap-y-16">
         <Navbar activeRoute={route} />
         <div className="h-fit px-6 md:px-0">
           <div className="md:w-6/12 mx-auto flex flex-col justify-center gap-y-10">
