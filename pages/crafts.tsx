@@ -12,18 +12,28 @@ const projectData = [
     shortDesc:
       "A frontend mini project to experiment with Apollo Client GraphQL to create a web app about Pokemon.",
     link: "https://pokenotgoapi.vercel.app",
+    repo: "https://github.com/agungfir98/pokeapi.git",
   },
   {
     title: "Old Portfolio Website",
     shortDesc:
       "A single page portfolio to brand myself as web developer (never finished it).",
     link: "https://agungfir98.netlify.app",
+    repo: "https://github.com/agungfir98/af-frontend.git",
   },
   {
     title: "Price Checker",
     shortDesc:
       "A scripting project. experimenting with python's library named beautifoulSoup to scrape data from website and smtplib to send mail.",
-    link: "https://github.com/agungfir98/TokopediaPriceChecker",
+    link: "",
+    repo: "https://github.com/agungfir98/TokopediaPriceChecker",
+  },
+  {
+    title: "Demo-Kureji",
+    shortDesc:
+      "An full fledged e-voting web app for organization. build with MongoDB, ExpressJS, ReactJS, NodeJS (MERN) stack.",
+    link: "https://demokureji.vercel.app",
+    repo: "https://github.com/agungfir98/demo-kureji-client.git",
   },
 ];
 const Posts: React.FC = () => {
