@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "dompurify": "^2.3.8",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.5.1",
     "marked": "^4.0.17",
