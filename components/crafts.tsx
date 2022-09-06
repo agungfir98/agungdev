@@ -11,21 +11,6 @@ import {
 import { Tile, TileBackground, TileContent, TileWrapper } from "./tile";
 
 const Crafts = () => {
-  const topThreeCraft = [
-    {
-      name: "PokeNotGo",
-      type: "Web App",
-      url: "https://pokenotgoapi.vercel.app/",
-      img: "/asset/pokenotgo.png",
-    },
-    {
-      name: "Old Portfolio Web",
-      type: "Web",
-      url: "https://agungfir98.netlify.app",
-      img: "/asset/oldportfolio.png",
-    },
-  ];
-
   return (
     <TileWrapper numOfPages={2}>
       <TileBackground>
