@@ -47,15 +47,10 @@ const Posts: React.FC = () => {
               </a>
             </Link>
             <h2 className="text-3xl font-semibold">Social</h2>
-            <ul className="ml-5 flex flex-col gap-y-2" style={{listStyle: "disc"}}>
+            <ul className="ml-5 flex flex-col gap-y-2" style={{ listStyle: "disc" }}>
               <li>
                 <p className="font-semibold">
                   Full Name: Agung Firmansyah
-                </p>
-              </li>
-              <li>
-                <p className="font-semibold">
-                  Pronouns: He/Him
                 </p>
               </li>
               <li>
