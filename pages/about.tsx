@@ -41,7 +41,7 @@ const Posts: React.FC = () => {
               }
             >
               <a target="_blank">
-                <p className="border-2 border-black w-fit p-3 rounded-lg text-black mx-auto font-bold">
+                <p className="border-2 border-black w-fit p-3 rounded-lg text-black mx-auto font-bold hover:bg-black hover:text-white/95">
                   Download My Resume
                 </p>
               </a>
