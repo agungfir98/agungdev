@@ -9,7 +9,7 @@ image: ""
 
 Recently I got no motivation to code, mainly because I got no projects idea while also struggling finding a new job in my city.
 Then I stumble upon __[Takuya Matsuyama's](https://www.youtube.com/@devaslife)__ (craftzdog) vim setup. I've always like the aesthetic setup he has so I decided to try neovim and configure it for my self.
-So this is my setup. You can also find it on __[my Github Repos](https://github.com/agungfir98/nvim.git)__
+So this is my setup. 
 
 # Ingredients
 Here is the ingredients for my neovim setup right now, it will be update from time to time.
