@@ -6,7 +6,14 @@ import { CodeCraftCard, GraphicDesignCard } from "../components/cards";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
-const projectData = [
+interface projectData {
+  title: string;
+  shortDesc?: string;
+  link?: string;
+  repo?: string;
+}
+
+const projectData: projectData[] = [
   {
     title: "Poke Not Go",
     shortDesc:
@@ -34,6 +41,13 @@ const projectData = [
       "An full fledged e-voting web app for organization. build with MongoDB, ExpressJS, ReactJS, NodeJS (MERN) stack.",
     link: "https://demokureji.vercel.app",
     repo: "https://github.com/agungfir98/demo-kureji-client.git",
+  },
+  {
+    title: "Pekan Hidupmu",
+    shortDesc:
+      "A calender of your life that represent weeks in your life ever since you are born, made as a reminder that your life is finite while times keep marching so that we shall live at our best but do not fear death.",
+    link: "https://pekanhidupmu.vercel.app",
+    repo: "https://github.com/agungfir98/memento-mori",
   },
 ];
 const Posts: React.FC = () => {
