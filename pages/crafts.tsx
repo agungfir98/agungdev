@@ -6,7 +6,7 @@ import { CodeCraftCard, GraphicDesignCard } from "../components/cards";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 
-interface projectData {
+export interface projectData {
   title: string;
   shortDesc?: string;
   link?: string;

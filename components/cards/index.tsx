@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { projectData } from "../../pages/crafts";
 
-export const CodeCraftCard: React.FC<{
-  link: string;
-  title: string;
-  shortDesc: string;
-  repo: string;
-}> = ({ link, repo, title, shortDesc }) => {
+export const CodeCraftCard: React.FC<projectData> = ({
+  link,
+  repo,
+  title,
+  shortDesc,
+}) => {
   return (
     <div className="border-2 border-black rounded-lg">
       <div className="px-3 pt-4 py-3 flex flex-col gap-y-2 h-full" id="card">
