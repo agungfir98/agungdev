@@ -1,14 +1,14 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import Head from "next/head";
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
+import Head from 'next/head'
 
 const Posts: React.FC = () => {
-  const router = useRouter();
-  const route = router.pathname;
+  const router = useRouter()
+  const route = router.pathname
   return (
     <>
       <Head>
@@ -26,18 +26,18 @@ const Posts: React.FC = () => {
               designing. Currently learning everything. <br />I started my
               serious software development not long ago, I already very familiar
               with computer, networking since I was a kid. for more story about
-              that you can read it{" "}
+              that you can read it{' '}
               <Link href="/posts/post/my-journey-into-software-development">
                 <a className="text-imperial font-semibold underline underline-offset-1">
                   here.
                 </a>
-              </Link>{" "}
+              </Link>{' '}
               In my spare time I like to play game or listening to science stuff
               on YouTube especially when it come to astronomy.
             </p>
             <Link
               href={
-                "https://drive.google.com/file/d/1xPxBpOgB0Gs6IuD9NBBmsFoeaELRxdsF/view?usp=sharing"
+                'https://drive.google.com/file/d/1xPxBpOgB0Gs6IuD9NBBmsFoeaELRxdsF/view?usp=sharing'
               }
             >
               <a target="_blank">
@@ -47,15 +47,16 @@ const Posts: React.FC = () => {
               </a>
             </Link>
             <h2 className="text-3xl font-semibold">Social</h2>
-            <ul className="ml-5 flex flex-col gap-y-2" style={{ listStyle: "disc" }}>
+            <ul
+              className="ml-5 flex flex-col gap-y-2"
+              style={{ listStyle: 'disc' }}
+            >
               <li>
-                <p className="font-semibold">
-                  Full Name: Agung Firmansyah
-                </p>
+                <p className="font-semibold">Full Name: Agung Firmansyah</p>
               </li>
               <li>
                 <p className="font-semibold">
-                  Email:{" "}
+                  Email:{' '}
                   <Link href="mailto:agungfir98@gmail.com">
                     <a
                       target="_blank"
@@ -68,7 +69,7 @@ const Posts: React.FC = () => {
               </li>
               <li>
                 <p className="font-semibold">
-                  Github:{" "}
+                  Github:{' '}
                   <Link href="https://github.com/agungfir98">
                     <a
                       target="_blank"
@@ -81,7 +82,7 @@ const Posts: React.FC = () => {
               </li>
               <li>
                 <p className="font-semibold">
-                  Twitter:{" "}
+                  Twitter:{' '}
                   <Link href="https://twitter.com/agung_firm">
                     <a
                       target="_blank"
@@ -94,7 +95,7 @@ const Posts: React.FC = () => {
               </li>
               <li>
                 <p className="font-semibold">
-                  LinkedIn:{" "}
+                  LinkedIn:{' '}
                   <Link href="https://linkedin.com/in/agung-firmansyah98">
                     <a
                       target="_blank"
@@ -111,7 +112,7 @@ const Posts: React.FC = () => {
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts

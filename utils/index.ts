@@ -1,49 +1,49 @@
 export const toTitleCase = (str: string) => {
   return str
-    .split(" ")
+    .split(' ')
     .map((v) => {
-      return v.charAt(0).toUpperCase() + v.substring(1).toLocaleLowerCase();
+      return v.charAt(0).toUpperCase() + v.substring(1).toLocaleLowerCase()
     })
-    .join(" ");
-};
+    .join(' ')
+}
 
 export const toSlug = (str: string): string => {
-  return str.replace(/\s+/g, "-").toLocaleLowerCase();
-};
+  return str.replace(/\s+/g, '-').toLocaleLowerCase()
+}
 
 export const getReadTime = (str: string) => {
-  return Math.floor(str.split(" ").length / 200);
-};
+  return Math.floor(str.split(' ').length / 200)
+}
 
 export const getFormatedDate = (unix: Date) => {
   const monthArray = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
 
-  const date = new Date(unix);
+  const date = new Date(unix)
 
-  const tanggal = date.getDate();
-  const tahun = date.getFullYear();
+  const tanggal = date.getDate()
+  const tahun = date.getFullYear()
   const bulan = monthArray.filter((v, i) => {
     if (date.getMonth() === i) {
-      return v;
+      return v
     }
-  });
+  })
 
   if (tahun !== new Date().getFullYear()) {
-    return `${bulan} ${tanggal} ${tahun}`;
+    return `${bulan} ${tanggal} ${tahun}`
   }
 
-  return `${bulan} ${tanggal}`;
-};
+  return `${bulan} ${tanggal}`
+}

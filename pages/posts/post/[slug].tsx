@@ -1,35 +1,35 @@
-import React, { useEffect } from "react";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import Head from "next/head";
-import path from "path";
-import fsPromise from "fs/promises";
-import matter from "gray-matter";
-import { marked } from "marked";
-import hljs from "highlight.js";
-import "highlight.js/styles/base16/monokai.css";
+import React, { useEffect } from 'react'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import path from 'path'
+import fsPromise from 'fs/promises'
+import matter from 'gray-matter'
+import { marked } from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/base16/monokai.css'
 
-import Navbar from "../../../components/navbar";
-import Footer from "../../../components/footer";
-import { getFileData } from "../../../lib/mdx";
-import { getFormatedDate, getReadTime, toTitleCase } from "../../../utils";
+import Navbar from '../../../components/navbar'
+import Footer from '../../../components/footer'
+import { getFileData } from '../../../lib/mdx'
+import { getFormatedDate, getReadTime, toTitleCase } from '../../../utils'
 
 export const Post: React.FC<{
-  frontMatter: { title: string; createdAt: Date };
-  slug: string;
-  content: string;
+  frontMatter: { title: string; createdAt: Date }
+  slug: string
+  content: string
 }> = ({ frontMatter: { title, createdAt }, slug, content }) => {
   // const router = useRouter();
   // const route = router.pathname.match(/\/[a-z]*/)[0];
-  const route = "/posts";
+  const route = '/posts'
 
   marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function (code, lang) {
-      const language = hljs.getLanguage(lang) ? lang : "plaintext";
-      return hljs.highlight(code, { language }).value;
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+      return hljs.highlight(code, { language }).value
     },
-    langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+    langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
     pedantic: false,
     gfm: true,
     breaks: false,
@@ -37,9 +37,9 @@ export const Post: React.FC<{
     smartLists: true,
     smartypants: false,
     xhtml: false,
-  });
+  })
 
-  useEffect(() => hljs.initHighlightingOnLoad(), []);
+  useEffect(() => hljs.initHighlightingOnLoad(), [])
 
   return (
     <>
@@ -74,39 +74,39 @@ export const Post: React.FC<{
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const fileData = await getFileData("data/blog");
+  const fileData = await getFileData('data/blog')
 
   const paths = fileData.map((data) => ({
     params: {
       slug: data.slug,
     },
-  }));
+  }))
 
   return {
     paths,
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({
   params: { slug },
 }: any) => {
   const fileData = await fsPromise.readFile(
-    path.join("data/blog", slug.replace(/-/g, "") + ".md"),
-    "utf-8"
-  );
-  const { data: frontMatter, content } = matter(fileData);
+    path.join('data/blog', slug.replace(/-/g, '') + '.md'),
+    'utf-8'
+  )
+  const { data: frontMatter, content } = matter(fileData)
   return {
     props: {
       slug,
       frontMatter,
       content,
     },
-  };
-};
+  }
+}

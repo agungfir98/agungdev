@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { getFormatedDate } from "../utils";
+import Link from 'next/link'
+import { getFormatedDate } from '../utils'
 
 const MainPost = ({ data }: any) => {
   return (
@@ -9,7 +9,7 @@ const MainPost = ({ data }: any) => {
           <h1 className="text-white text-2xl font-semibold">Latest Posts</h1>
           <section className=" flex flex-col justify-between text-white gap-y-8">
             <ul className=" flex flex-col justify-between gap-y-7">
-              {!data.length && "No Post Yet"}
+              {!data.length && 'No Post Yet'}
               {data.map((v: any, i: any) => (
                 <li key={i}>
                   <Link href={v.slug}>
@@ -30,9 +30,9 @@ const MainPost = ({ data }: any) => {
               ))}
             </ul>
           </section>
-          <Link href={"/posts"}>
+          <Link href={'/posts'}>
             <p
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               className="border-2 border-white w-fit p-3 rounded-lg text-white mx-auto font-bold"
             >
               See more...
@@ -41,7 +41,7 @@ const MainPost = ({ data }: any) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MainPost;
+export default MainPost

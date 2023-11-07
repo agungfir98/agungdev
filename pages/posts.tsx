@@ -1,30 +1,30 @@
-import { GetStaticProps } from "next";
-import React from "react";
-import Link from "next/link";
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { GetStaticProps } from 'next'
+import React from 'react'
+import Link from 'next/link'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
-import { getFormatedDate } from "../utils";
-import { getFileData, getFrontPostData } from "../lib/mdx";
+import Footer from '../components/footer'
+import Navbar from '../components/navbar'
+import { getFormatedDate } from '../utils'
+import { getFileData, getFrontPostData } from '../lib/mdx'
 
 interface PostObj {
   posts: [
     {
-      readTime: number;
-      slug: string;
-      title: string;
-      truncate: string;
-      createdAt: Date;
-      updatedAt: Date;
+      readTime: number
+      slug: string
+      title: string
+      truncate: string
+      createdAt: Date
+      updatedAt: Date
     }
-  ];
+  ]
 }
 
 const Posts: React.FC<PostObj> = ({ posts }) => {
-  const router = useRouter();
-  const route = router.pathname;
+  const router = useRouter()
+  const route = router.pathname
   return (
     <>
       <Head>
@@ -46,7 +46,7 @@ const Posts: React.FC<PostObj> = ({ posts }) => {
                           {v.title}
                         </h1>
                         <p className="py-2">
-                          {" "}
+                          {' '}
                           {getFormatedDate(v.createdAt)} &#183; {v.readTime} min
                           read
                         </p>
@@ -62,22 +62,22 @@ const Posts: React.FC<PostObj> = ({ posts }) => {
         <Footer />
       </div>
     </>
-  );
-};
-export default Posts;
+  )
+}
+export default Posts
 
 // get Static Props ==================
 
 export const getStaticProps: GetStaticProps = async () => {
-  const fileData = await getFileData("data/blog");
+  const fileData = await getFileData('data/blog')
   const posts = getFrontPostData(fileData).sort(
     (a: { createdAt: number }, b: { createdAt: number }) =>
       b.createdAt - a.createdAt
-  );
+  )
 
   return {
     props: {
       posts,
     },
-  };
-};
+  }
+}

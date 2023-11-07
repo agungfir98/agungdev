@@ -1,15 +1,15 @@
 ---
 title: this is a test post
 draft: true
-image: "/asset/blog/img.png"
+image: '/asset/blog/img.png'
 createdAt: 1657173967727
 ---
 
 # Haloooo
 
 ```javascript
-const halo = "halooo";
-console.log(halo);
+const halo = 'halooo'
+console.log(halo)
 ```
 
 ```python

@@ -1,7 +1,7 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 const Footer = () => {
-  let year = new Date().getFullYear();
+  let year = new Date().getFullYear()
 
   return (
     <footer className="bg-black mt-auto text-white h-fit flex flex-col py-7 gap-y-10">
@@ -9,21 +9,21 @@ const Footer = () => {
         <div className="flex flex-row justify-between px-6 md:px-0 ">
           <div className="justify-center my-auto">
             <p className="font-bebas text-3xl">
-              <Link href={"/"}>Agung-DEV</Link>
+              <Link href={'/'}>Agung-DEV</Link>
             </p>
           </div>
           <ul className="flex flex-col gap-y-2 text-right items-end">
             <li className="border-b w-fit ">
-              <Link href={"/"}>Home</Link>
+              <Link href={'/'}>Home</Link>
             </li>
             <li className="border-b w-fit ">
-              <Link href={"/posts"}>Posts</Link>
+              <Link href={'/posts'}>Posts</Link>
             </li>
             <li className="border-b w-fit ">
-              <Link href={"/crafts"}>Crafts</Link>
+              <Link href={'/crafts'}>Crafts</Link>
             </li>
             <li className="border-b w-fit ">
-              <Link href={"/about"}>About</Link>
+              <Link href={'/about'}>About</Link>
             </li>
           </ul>
         </div>
@@ -32,6 +32,6 @@ const Footer = () => {
         <p>&copy; {year} made with ♥ by Agung Firmansyah</p>
       </div>
     </footer>
-  );
-};
-export default Footer;
+  )
+}
+export default Footer

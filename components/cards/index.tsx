@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { projectData } from "../../pages/crafts";
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { projectData } from '../../pages/crafts'
 
 export const CodeCraftCard: React.FC<projectData> = ({
   link,
@@ -46,13 +46,13 @@ export const CodeCraftCard: React.FC<projectData> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const GraphicDesignCard: React.FC<{
-  src: string;
-  width: number;
-  height: number;
+  src: string
+  width: number
+  height: number
 }> = ({ src, width, height }) => {
   return (
     <div className="border-2 border-black rounded-lg">
@@ -65,5 +65,5 @@ export const GraphicDesignCard: React.FC<{
         height={height}
       />
     </div>
-  );
-};
+  )
+}
