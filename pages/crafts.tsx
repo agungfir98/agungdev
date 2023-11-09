@@ -15,10 +15,17 @@ export interface projectData {
 
 const projectData: projectData[] = [
   {
-    title: 'Oraboros (Work In Progress',
+    title: 'Oraboros (Work In Progress)',
     shortDesc:
       'An app to track your daily expenses written in Expo React Native and Firebase',
     repo: 'https://github.com/agungfir98/oraboros',
+  },
+  {
+    title: 'Demo-Kureiji',
+    shortDesc:
+      'An full fledged e-voting web app for organization. build with MongoDB, ExpressJS, ReactJS, NodeJS (MERN) stack.',
+    link: 'https://demokureiji.vercel.app',
+    repo: 'https://github.com/agungfir98/demokureiji',
   },
   {
     title: 'Poke Not Go',
@@ -40,13 +47,6 @@ const projectData: projectData[] = [
       "A scripting project. experimenting with python's library named beautifoulSoup to scrape data from website and smtplib to send mail.",
     link: '',
     repo: 'https://github.com/agungfir98/TokopediaPriceChecker',
-  },
-  {
-    title: 'Demo-Kureji',
-    shortDesc:
-      'An full fledged e-voting web app for organization. build with MongoDB, ExpressJS, ReactJS, NodeJS (MERN) stack.',
-    link: 'https://demokureji.vercel.app',
-    repo: 'https://github.com/agungfir98/demo-kureji-client.git',
   },
   {
     title: 'Pekan Hidupmu',
