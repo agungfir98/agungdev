@@ -55,6 +55,12 @@ const projectData: projectData[] = [
     link: 'https://pekanhidupmu.vercel.app',
     repo: 'https://github.com/agungfir98/memento-mori',
   },
+  {
+    title: 'Kaela Kovalskia Fansite',
+    shortDesc: `A Kaela Kovalskia profile website containing basic information about Kaela Kovalskia`,
+    link: 'https://kaela-kovalskia-fansite.vercel.app/',
+    repo: 'https://github.com/agungfir98/KaelaKovalskiaFansite',
+  },
 ]
 const Posts: React.FC = () => {
   const router = useRouter()
