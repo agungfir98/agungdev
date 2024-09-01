@@ -61,6 +61,12 @@ const projectData: projectData[] = [
     link: 'https://kaela-kovalskia-fansite.vercel.app/',
     repo: 'https://github.com/agungfir98/KaelaKovalskiaFansite',
   },
+  {
+    title: 'gcal-cli',
+    shortDesc:
+      'a google calendar command line utility to print event from user calendar',
+    repo: 'https://github.com/agungfir98/gcal-cli',
+  },
 ]
 const Posts: React.FC = () => {
   const router = useRouter()
@@ -81,9 +87,11 @@ const Posts: React.FC = () => {
                 Code Project
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {projectData.map((data, i) => (
-                  <CodeCraftCard key={i} {...data} />
-                ))}
+                {projectData
+                  .sort((a, b) => a.title.localeCompare(b.title))
+                  .map((data, i) => (
+                    <CodeCraftCard key={i} {...data} />
+                  ))}
               </div>
             </div>
             <div className="gap-y-4 flex flex-col">
