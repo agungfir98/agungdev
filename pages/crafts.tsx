@@ -49,13 +49,6 @@ const projectData: projectData[] = [
     repo: 'https://github.com/agungfir98/TokopediaPriceChecker',
   },
   {
-    title: 'Pekan Hidupmu',
-    shortDesc:
-      'A calender of your life that represent weeks in your life ever since you are born, made as a reminder that your life is finite while times keep marching so that we shall live at our best but do not fear death.',
-    link: 'https://pekanhidupmu.vercel.app',
-    repo: 'https://github.com/agungfir98/memento-mori',
-  },
-  {
     title: 'Kaela Kovalskia Fansite',
     shortDesc: `A Kaela Kovalskia profile website containing basic information about Kaela Kovalskia`,
     link: 'https://kaela-kovalskia-fansite.vercel.app/',
